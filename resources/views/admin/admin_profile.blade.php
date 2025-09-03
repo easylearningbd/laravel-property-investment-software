@@ -65,7 +65,8 @@
         
     <div id="edit">
 
-        <form class="p-3"> 
+  <form action="{{ route('admin.profile.update') }}" method="post" class="p-3" enctype="multipart/form-data"> 
+    @csrf
 
   <h4 class="mb-3 font-weight-semibold text-dark">Personal Information</h4>
 
@@ -113,7 +114,7 @@
 
 <div class="row">
     <div class="col-md-12 text-end mt-3">
-        <button class="btn btn-primary modal-confirm">Save Changes</button>
+        <button type="submit" class="btn btn-primary modal-confirm">Save Changes</button>
     </div>
 </div>
 

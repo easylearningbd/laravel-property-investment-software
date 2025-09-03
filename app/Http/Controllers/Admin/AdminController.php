@@ -31,6 +31,46 @@ class AdminController extends Controller
     }
      // End Method
 
+    public function AdminProfileUpdate(Request $request){
+
+        $id = Auth::user()->id;
+        $data = User::find($id);
+
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->first_name = $request->first_name;
+        $data->last_name = $request->last_name;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+
+        $oldPhotoPath = $data->photo;
+
+        if ($request->hasFile('photo')) {
+           $file = $request->file('photo');
+           $filename = time().'.'.$file->getClientOriginalExtension();
+           $file->move(public_path('upload/profile_images'),$filename);
+           $data->photo = $filename;
+
+           if ($oldPhotoPath && $oldPhotoPath !== $filename) {
+             $this->deleteOldImage($oldPhotoPath);
+           } 
+        }
+
+        $data->save();
+
+        return redirect()->back();
+             
+    }
+     // End Method
+
+     private function deleteOldImage(string $oldPhotoPath): void {
+        $fullPath = public_path('upload/profile_images/'.$oldPhotoPath );
+        if (file_exists($fullPath)) {
+           unlink($fullPath);
+        }
+     }
+       // End Private Method
+
 
 
 
