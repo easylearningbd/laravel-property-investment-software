@@ -20,46 +20,51 @@
                         <span>Dashboard</span>
                     </a>                        
                 </li>
-                <li class="nav-parent">
-                    <a class="nav-link" href="#">
-                        <i class="bx bx-cart-alt" aria-hidden="true"></i>
-                        <span>eCommerce</span>
-                    </a>
-                    <ul class="nav nav-children">
-                        <li>
-                            <a class="nav-link" href="ecommerce-dashboard.html">
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="ecommerce-products-list.html">
-                                Products List
-                            </a>
-                        </li>
-                         
-                    </ul>
-                </li>
+<li class="nav-parent">
+    <a class="nav-link" href="#">
+        <i class="bx bx-cart-alt" aria-hidden="true"></i>
+        <span>Properties </span>
+    </a>
+    <ul class="nav nav-children">
+        <li>
+            <a class="nav-link" href="ecommerce-dashboard.html">
+                All Property 
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="{{ route('all.times') }}">
+                Manage Time
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="ecommerce-products-list.html">
+                Manage Location
+            </a>
+        </li>
+            
+    </ul>
+</li>
                 
                  
-                <li class="nav-parent">
-                    <a class="nav-link" href="#">
-                        <i class="bx bx-file" aria-hidden="true"></i>
-                        <span>Pages</span>
-                    </a>
-                    <ul class="nav nav-children">
-                        <li>
-                            <a class="nav-link" href="pages-signup.html">
-                                Sign Up
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="pages-signin.html">
-                                Sign In
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </li>
+<li class="nav-parent">
+    <a class="nav-link" href="#">
+        <i class="bx bx-file" aria-hidden="true"></i>
+        <span>Pages</span>
+    </a>
+    <ul class="nav nav-children">
+        <li>
+            <a class="nav-link" href="pages-signup.html">
+                Sign Up
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="pages-signin.html">
+                Sign In
+            </a>
+        </li>
+        
+    </ul>
+</li>
              
                  
 
