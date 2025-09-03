@@ -62,6 +62,19 @@ class PropertyController extends Controller
     }
     //End Method 
 
+    public function DeleteTimes($id){
+      
+        Time::find($id)->delete();
+
+        $notification = array(
+            'message' => 'Time Deleted Successfully',
+            'alert-type' => 'success'
+        ); 
+        return redirect()->back()->with($notification);
+
+    }
+    //End Method 
+
 
 
 

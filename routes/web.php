@@ -47,6 +47,7 @@ Route::controller(PropertyController::class)->group(function(){
     Route::post('/store/times', 'StoreTimes')->name('store.times');
     Route::get('/edit/times/{id}', 'EditTimes')->name('edit.times');
     Route::post('/update/times', 'UpdateTimes')->name('update.times');
+    Route::get('/delete/times/{id}', 'DeleteTimes')->name('delete.times');
 
 });
 
