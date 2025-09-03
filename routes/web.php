@@ -43,7 +43,7 @@ Route::middleware(['auth', IsAdmin::class])->group(function(){
 
 Route::controller(PropertyController::class)->group(function(){
     Route::get('/all/times', 'AllTimes')->name('all.times');
-
+    Route::get('/add/times', 'AddTimes')->name('add.times');
 
 });
 

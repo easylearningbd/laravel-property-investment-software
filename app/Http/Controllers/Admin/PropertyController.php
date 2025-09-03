@@ -15,7 +15,10 @@ class PropertyController extends Controller
     } 
     //End Method 
 
-
+    public function AddTimes(){
+    return view('admin.backend.time.add_time');
+    }
+    //End Method 
 
 
 

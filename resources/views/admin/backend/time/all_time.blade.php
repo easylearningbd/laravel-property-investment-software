@@ -16,6 +16,47 @@
 </header>
 
 
+<div class="row">
+<div class="col">
+    <section class="card">
+        <header class="card-header">
+            <div class="card-actions" style="top: 8px;">
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ route('add.times') }}'" >Add Times </button>           
+            </div>
+
+            <h2 class="card-title">All Times</h2>
+        </header>
+        <div class="card-body">
+            <div class="table-responsive">
+<table class="table table-responsive-lg table-bordered table-striped table-lg mb-0">
+    <thead>
+        <tr>
+            <th>Sl</th>
+            <th>Time Name</th>
+            <th>Time Hour</th>
+            <th>Action</th> 
+        </tr>
+    </thead>
+    <tbody>
+      @foreach ($times as $key=> $item) 
+        <tr>
+            <td>{{ $key+1 }}</td>
+            <td>{{ $item->time_name }}</td>
+            <td>{{ $item->time_hour }}</td>
+            <td>
+         <a href="" class="btn btn-success btn-sm">Edit</a>  
+         <a href="" class="btn btn-danger btn-sm">Delete</a>      
+             </td>  
+        </tr>
+      @endforeach  
+            
+    </tbody>
+</table>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
 
 
 @endsection
