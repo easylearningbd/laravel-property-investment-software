@@ -1,5 +1,6 @@
 @extends('admin.admin_dashboard')
 @section('admin') 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  
 <header class="page-header">
     <h2>User Profile</h2>
@@ -101,11 +102,11 @@
 
     <div class="form-group col-md-6">
         <label for="inputPassword4">User Profile Photo </label>
-        <input type="file" name="photo" class="form-control"  >
+        <input type="file" name="photo" class="form-control" id="image"  >
     </div>
     <div class="form-group col-md-6">
         <label for="inputPassword5"> </label>
-         <img src="{{ (!empty($profileData->photo)) ? url('upload/profile_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xl" style="width: 100px; height:100px;">
+         <img id="showImage" src="{{ (!empty($profileData->photo)) ? url('upload/profile_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xl" style="width: 100px; height:100px;">
     </div>
     
 </div>
@@ -132,7 +133,18 @@
 
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        })
+    })
 
+</script>
 
 
 
