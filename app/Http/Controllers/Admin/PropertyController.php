@@ -20,6 +20,50 @@ class PropertyController extends Controller
     }
     //End Method 
 
+    public function StoreTimes(Request $request){
+
+        Time::create([
+            'time_name' => $request->time_name,
+            'time_hour' => $request->time_hour,
+        ]);
+
+        $notification = array(
+            'message' => 'Time Added Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.times')->with($notification);
+
+    }
+    //End Method 
+
+    public function EditTimes($id){
+        $times = Time::find($id);
+        return view('admin.backend.time.edit_time',compact('times'));
+    }
+    //End Method 
+
+    public function UpdateTimes(Request $request){
+
+        $time_id = $request->id;
+
+        Time::find($time_id)->update([
+            'time_name' => $request->time_name,
+            'time_hour' => $request->time_hour,
+        ]);
+
+        $notification = array(
+            'message' => 'Time Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.times')->with($notification);
+
+    }
+    //End Method 
+
+
+
 
 
 }
