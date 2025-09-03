@@ -11,15 +11,9 @@
                 <a href="index.html">
                     <i class="bx bx-home-alt"></i>
                 </a>
-            </li>
-
-            <li><span>Pages</span></li>
-
-            <li><span>User Profile</span></li>
-
-        </ol>
-
-        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </li> 
+            <li><span>User Profile</span></li> 
+        </ol> 
     </div>
 </header>
 

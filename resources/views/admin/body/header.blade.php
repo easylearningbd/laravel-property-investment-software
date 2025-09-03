@@ -104,7 +104,7 @@
                     <a role="menuitem" tabindex="-1" href="{{ route('admin.profile') }}"><i class="bx bx-user-circle"></i> My Profile</a>
                 </li>
                 <li>
-                    <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="bx bx-lock"></i> Lock Screen</a>
+                    <a role="menuitem" tabindex="-1" href="{{ route('admin.change.password') }}"><i class="bx bx-lock"></i> Change Password</a>
                 </li>
                 <li>
                     <a role="menuitem" tabindex="-1" href="{{ route('admin.logout') }}"><i class="bx bx-power-off"></i> Logout</a>
