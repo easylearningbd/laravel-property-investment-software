@@ -18,7 +18,7 @@
 
 
 <div class="row"> 
-<form action="{{ route('store.times') }}" method="post">
+<form action="{{ route('store.location') }}" method="post" enctype="multipart/form-data">
     @csrf
 
 

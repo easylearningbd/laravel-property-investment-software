@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Time;
 use App\Models\Location;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class PropertyController extends Controller
 {
@@ -88,6 +90,31 @@ class PropertyController extends Controller
     return view('admin.backend.location.add_location');
     }
     //End Method 
+
+    public function StoreLocation(Request $request){
+
+        if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $manager = new ImageManager(new Driver());
+          $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+          $img = $manager->read($image);
+          $img->resize(300,395)->save(public_path('upload/location/'.$name_gen));
+          $save_url = 'upload/location/'.$name_gen; 
+        }
+
+        Location::create([
+            'name' => $request->name,
+            'image' => $save_url
+        ]);
+
+        $notification = array(
+            'message' => 'Location Added Successfully',
+            'alert-type' => 'success'
+        ); 
+        return redirect()->route('all.location')->with($notification); 
+
+    }
+       //End Method 
 
 
 
