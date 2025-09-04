@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Time;
+use App\Models\Location;
 
 class PropertyController extends Controller
 {
@@ -73,6 +74,14 @@ class PropertyController extends Controller
         return redirect()->back()->with($notification);
 
     }
+    //End Method 
+
+    ///////////// Location Method //////////////
+
+    public function AllLocation(){
+        $location = Location::latest()->get();
+        return view('admin.backend.location.all_location',compact('location'));
+    } 
     //End Method 
 
 

@@ -37,7 +37,7 @@
             </a>
         </li>
         <li>
-            <a class="nav-link" href="ecommerce-products-list.html">
+            <a class="nav-link" href="{{ route('all.location') }}">
                 Manage Location
             </a>
         </li>
