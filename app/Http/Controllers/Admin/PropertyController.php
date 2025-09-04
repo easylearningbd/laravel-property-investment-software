@@ -169,6 +169,25 @@ class PropertyController extends Controller
     }
        //End Method 
 
+    public function DeleteLocation($id){
+        $location = Location::findOrFail($id);
+
+        // Delete main image
+        if ($location->image && file_exists(public_path($location->image))) {
+           unlink(public_path($location->image));
+        }
+
+        Location::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Location Deleted Successfully',
+            'alert-type' => 'success'
+        ); 
+        return redirect()->back()->with($notification);  
+
+    }
+    //End Method 
+
 
 
 }

@@ -45,7 +45,7 @@
             <td> <img src="{{ asset($item->image) }}" style="width: 50px; height:50px;" > </td>
             <td>
          <a href="{{ route('edit.location',$item->id) }}" class="btn btn-success btn-sm">Edit</a>  
-         <a href="{{ route('delete.times',$item->id) }}" class="btn btn-danger btn-sm" id="delete">Delete</a>      
+         <a href="{{ route('delete.location',$item->id) }}" class="btn btn-danger btn-sm" id="delete">Delete</a>      
              </td>  
         </tr>
       @endforeach  

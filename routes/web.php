@@ -57,7 +57,7 @@ Route::controller(PropertyController::class)->group(function(){
     Route::post('/store/location', 'StoreLocation')->name('store.location');
     Route::get('/edit/location/{id}', 'EditLocation')->name('edit.location');
     Route::post('/update/location', 'UpdateLocation')->name('update.location');
-    Route::get('/delete/times/{id}', 'DeleteTimes')->name('delete.times');
+    Route::get('/delete/location/{id}', 'DeleteLocation')->name('delete.location');
 
 });
 
