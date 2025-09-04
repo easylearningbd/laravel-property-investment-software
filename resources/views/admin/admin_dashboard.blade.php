@@ -153,6 +153,31 @@
 </script>
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        })
+    })
+ 
+		 
+	/// Generate Slug
+	function generateSlug(){
+		const title = document.getElementById('titleInput').value;
+		const slug = title.toLowerCase()
+						.replace(/[^a-z0-9]+/g, '-')
+                        .replace(/(^-|-$)+/g, '');
+			document.getElementById('slugInput').value = slug;
+	} 
+	//End Method
+
+</script>
+
+
 
 	</body>
 </html>
