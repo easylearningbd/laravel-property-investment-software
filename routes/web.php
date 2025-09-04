@@ -53,7 +53,7 @@ Route::controller(PropertyController::class)->group(function(){
 
 Route::controller(PropertyController::class)->group(function(){
     Route::get('/all/location', 'AllLocation')->name('all.location');
-    Route::get('/add/times', 'AddTimes')->name('add.times');
+    Route::get('/add/location', 'AddLocation')->name('add.location');
     Route::post('/store/times', 'StoreTimes')->name('store.times');
     Route::get('/edit/times/{id}', 'EditTimes')->name('edit.times');
     Route::post('/update/times', 'UpdateTimes')->name('update.times');

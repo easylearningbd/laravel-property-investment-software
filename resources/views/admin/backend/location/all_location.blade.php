@@ -21,7 +21,7 @@
     <section class="card">
         <header class="card-header">
             <div class="card-actions" style="top: 8px;">
-    <button type="button" class="btn btn-primary" onclick="window.location='{{ route('add.times') }}'" >Add Location </button>           
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ route('add.location') }}'" >Add Location </button>           
             </div>
 
             <h2 class="card-title">All Location</h2>

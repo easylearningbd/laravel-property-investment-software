@@ -84,7 +84,10 @@ class PropertyController extends Controller
     } 
     //End Method 
 
-
+    public function AddLocation(){
+    return view('admin.backend.location.add_location');
+    }
+    //End Method 
 
 
 
