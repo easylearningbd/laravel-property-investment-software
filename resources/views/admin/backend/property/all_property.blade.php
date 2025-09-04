@@ -21,7 +21,7 @@
     <section class="card">
         <header class="card-header">
             <div class="card-actions" style="top: 8px;">
-    <button type="button" class="btn btn-primary" onclick="window.location='{{ route('add.location') }}'" >Add Property </button>           
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ route('add.property') }}'" >Add Property </button>           
             </div>
 
             <h2 class="card-title">All Property</h2>

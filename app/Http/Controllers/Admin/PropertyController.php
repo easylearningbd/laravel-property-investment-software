@@ -198,6 +198,13 @@ class PropertyController extends Controller
    }
    //End Method 
 
+   public function AddProperty(){
+    $location = Location::get();
+    $times = Time::get();
+    return view('admin.backend.property.add_property',compact('location','times'));
+   }
+   //End Method 
+
 
 
 

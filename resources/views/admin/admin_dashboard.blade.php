@@ -114,6 +114,19 @@
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
  <script src="{{ asset('backend/js/code.js') }}"></script>
 
+  <script src="{{ asset('backend/js/tinymce/tinymce.min.js') }}"></script>
+   <script>
+    tinymce.init({
+        selector: '#detailsEditor',
+        plugins: 'lists link image preview code',
+        toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | preview code',
+        menubar: false,
+        height: 300
+    });
+    </script>
+
+
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
