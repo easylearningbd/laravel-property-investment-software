@@ -10,6 +10,8 @@ use App\Models\Location;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Facades\File;
+use App\Models\Property;
+use App\Models\PropertyGalleryImage;
 
 class PropertyController extends Controller
 {
@@ -187,6 +189,15 @@ class PropertyController extends Controller
 
     }
     //End Method 
+
+    /////////////// Property All Method 
+
+   public function AllProperty(){
+    $allData = Property::orderBy('id','desc')->get();
+    return view('admin.backend.property.all_property',compact('allData')); 
+   }
+   //End Method 
+
 
 
 

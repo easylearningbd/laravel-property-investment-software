@@ -27,7 +27,7 @@
     </a>
     <ul class="nav nav-children">
         <li>
-            <a class="nav-link" href="ecommerce-dashboard.html">
+            <a class="nav-link" href="{{ route('all.property') }}">
                 All Property 
             </a>
         </li>

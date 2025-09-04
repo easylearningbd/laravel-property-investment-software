@@ -62,6 +62,13 @@ Route::controller(PropertyController::class)->group(function(){
 });
 
 
+Route::controller(PropertyController::class)->group(function(){
+    Route::get('/all/property', 'AllProperty')->name('all.property'); 
+    
+
+});
+
+
 
 
 
