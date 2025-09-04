@@ -9,6 +9,7 @@ use App\Models\Time;
 use App\Models\Location;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Illuminate\Support\Facades\File;
 
 class PropertyController extends Controller
 {
@@ -112,6 +113,58 @@ class PropertyController extends Controller
             'alert-type' => 'success'
         ); 
         return redirect()->route('all.location')->with($notification); 
+
+    }
+       //End Method 
+
+    public function EditLocation($id){
+        $location = Location::find($id);
+        return view('admin.backend.location.edit_location',compact('location'));
+    }
+    //End Method 
+
+
+     public function UpdateLocation(Request $request){
+
+        $location_id = $request->id;
+        $location = Location::findOrFail($location_id);
+
+        if ($request->hasFile('image')) {
+           
+          if (File::exists(public_path($location->image))) {
+            File::delete(public_path($location->image));
+          }  
+
+          $image = $request->file('image');
+          $manager = new ImageManager(new Driver());
+          $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+          $img = $manager->read($image);
+          $img->resize(300,395)->save(public_path('upload/location/'.$name_gen));
+          $save_url = 'upload/location/'.$name_gen;  
+
+        Location::find($location_id)->update([
+            'name' => $request->name,
+            'image' => $save_url
+        ]);
+
+        $notification = array(
+            'message' => 'Location Added Successfully',
+            'alert-type' => 'success'
+        ); 
+        return redirect()->route('all.location')->with($notification); 
+     
+    } else{
+
+        Location::find($location_id)->update([
+            'name' => $request->name, 
+        ]);
+
+        $notification = array(
+            'message' => 'Location Added Successfully',
+            'alert-type' => 'success'
+        ); 
+        return redirect()->route('all.location')->with($notification);  
+     } 
 
     }
        //End Method 
